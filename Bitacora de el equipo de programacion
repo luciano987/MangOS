@@ -1,0 +1,5 @@
+# Vitacora
+
+Hoy 08/10/2025 Logramos hacer un minimo avance en cuanto a el registro de usuarios.
+Modificamos la columna "username" de la tabla "Users" a "name", ademas le agregamos la columna "role" con el valor por
+"user" y asi logramos dejar funcionando el registro de usuarios. :)
