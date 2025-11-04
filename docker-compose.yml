@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    container_name: mini-framework-web
+    ports:
+      - "8090:80"
+    volumes:
+      - ./mini-framework:/var/www/html/mini-framework
+    depends_on:
+      - db
+    networks:
+      - mini-net
+
+  db:
+    image: mariadb:latest
+    container_name: mini-framework-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: proyutu
+      MYSQL_USER: proyutu
+      MYSQL_PASSWORD: 12345678
+    ports:
+      - "3307:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - mini-net
+
+  postfix:
+    image: boky/postfix
+    container_name: mini-framework-postfix
+    environment:
+      MAILNAME: localhost
+      SMTP_USER: "user:password"
+    networks:
+      - mini-net
+
+volumes:
+  db_data:
+
+networks:
+  mini-net:
+
