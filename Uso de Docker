@@ -1,0 +1,5 @@
+Como ejecutar docker:
+1-Desde la terminal dirijirse al archivo descargado esta el archivo (docker-mini-framework) docker, donde se encuentra el archivo .yml y Dockerfile.
+2-Una vez ahi estar como sudo su/root.
+3-Ejecutar el comando (docker compose up -d --build) para inizializar el contenedor que contiene php/apache, mariadb y potsfix.
+4-Ir a (http://localhost:8090/) en el navegador web para ver la ejecucion.
